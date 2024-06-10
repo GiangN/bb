@@ -1,5 +1,8 @@
 # https://github.com/user/repo/blob/main/hello-param.yaml
-
+apiVersion: tekton.dev/v1beta1
+kind: StepAction
+metadata:
+  name: example-stepaction-name
 spec:
   params:
     - name: param1
