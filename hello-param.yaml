@@ -1,0 +1,17 @@
+# https://github.com/user/repo/blob/main/hello-param.yaml
+
+spec:
+  params:
+    - name: param1
+      description: The first parameter
+      type: string
+      default: "/foo/bar"
+  results:
+    - name: result1
+      description: The first result
+  image: ubuntu
+  env:
+  - name: PARAM1
+    value: "$(params.param1)"
+  script: |
+    echo -n hello ${PARAM1} | tee $(step.results.result1.path)
